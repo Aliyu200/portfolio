@@ -1,0 +1,247 @@
+/* --- Base Reset & Core Structural Rules --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #e5e5e5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Header & Layout System --- */
+.site-header {
+    width: 100%;
+    background-color: #0d0d0d;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    color: #e2b714;
+}
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: #a3a3a3;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #e2b714;
+}
+
+.viewport-canvas {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.canvas-view {
+    padding: 6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.view-title {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2.5rem;
+    color: #fff;
+}
+
+/* --- Page 09: Philosophy / Objectives Layout --- */
+.philosophy-container {
+    max-width: 800px;
+}
+
+.philosophy-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #a3a3a3;
+    border-left: 3px solid #e2b714;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.philosophy-narrative-text {
+    font-size: 1.1rem;
+    color: #8c8c8c;
+}
+
+/* --- Milestones Section --- */
+.milestones-flowline {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.flowline-node {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.node-index {
+    font-family: monospace;
+    font-size: 1.25rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.25rem 0.5rem;
+}
+
+.flowline-node p {
+    font-size: 1.15rem;
+    color: #b3b3b3;
+    max-width: 700px;
+}
+
+/* --- PAGE 10: MEDIA SHOWCASE STYLES --- */
+.media-subtext {
+    color: #8c8c8c;
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .media-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+.media-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.media-tag {
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: #8c8c8c;
+}
+
+.media-element-audio {
+    width: 100%;
+}
+
+.media-element-video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- Page 11: Contact Layout --- */
+.contact-subtext {
+    font-size: 1.1rem;
+    color: #8c8c8c;
+    margin-bottom: 3rem;
+}
+
+.editorial-contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-line-item {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-line-item:last-child {
+    margin-bottom: 0;
+}
+
+.c-tag {
+    color: #8b949e;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+.c-link {
+    color: #e2b714;
+    text-decoration: none;
+}
+
+.static-value {
+    color: #ffffff;
+}
+
+/* --- Mobile Adaptability Overrides (Always Dead Last) --- */
+@media (max-width: 900px) {
+    .site-header {
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1rem;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.7rem;
+    }
+
+    .viewport-canvas {
+        margin-top: 240px;
+    }
+
+    .about-flex-layout, .credential-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .headline-name {
+        font-size: 2.4rem;
+    }
+}
