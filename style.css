@@ -1,19 +1,23 @@
-/* --- Base Reset & Core Structural Rules --- */
+/* --- Base Reset & Core Typographic Baseline --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #0d0d0d;
+    background-color: #0d0d0d; /* Premium Editorial Dark Space */
     color: #e5e5e5;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* --- Header & Layout System --- */
+/* --- Layout System --- */
 .site-header {
     width: 100%;
     background-color: #0d0d0d;
@@ -50,7 +54,7 @@ body {
     transition: color 0.2s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     color: #e2b714;
 }
 
@@ -74,7 +78,169 @@ body {
     color: #fff;
 }
 
-/* --- Page 09: Philosophy / Objectives Layout --- */
+/* --- PAGE 01: HERO --- */
+.hero-container {
+    padding: 4rem 0;
+}
+
+.section-tagline {
+    font-family: monospace;
+    color: #e2b714;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.5rem;
+}
+
+.headline-name {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.hero-intro {
+    font-size: 1.5rem;
+    color: #a3a3a3;
+    max-width: 700px;
+    margin-bottom: 3rem;
+}
+
+.hero-image-frame {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.hero-profile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cta-scroll-btn {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 0.75rem 1.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-scroll-btn:hover {
+    background: #fff;
+    color: #0d0d0d;
+}
+
+/* --- PAGE 02: PROFILE --- */
+.about-flex-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .about-flex-layout {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.profile-image-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-paragraph {
+    font-size: 1.25rem;
+    color: #a3a3a3;
+    margin-bottom: 1.5rem;
+}
+
+/* --- PAGE 03: ACADEMICS --- */
+.sub-institution {
+    color: #e2b714;
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* --- CARDS: STACK, PROJECTS, INFRASTRUCTURE --- */
+.credential-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cred-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+}
+
+.cred-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 1rem 0;
+}
+
+.cred-card p {
+    color: #a3a3a3;
+}
+
+/* --- PAGE 06: CERTIFICATION ENGINE LAYOUTS --- */
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-column: 1 / -1; /* spans full grid width */
+}
+
+.cert-img-container {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cert-display-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cert-meta-desc {
+    font-size: 1.1rem;
+    color: #a3a3a3;
+}
+
+.verify-cert-link {
+    display: inline-block;
+    color: #e2b714;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    border-bottom: 1px dashed transparent;
+    transition: border-color 0.2s;
+    align-self: flex-start;
+}
+
+.verify-cert-link:hover {
+    border-bottom-color: #e2b714;
+}
+
+/* --- PAGE 09: PHILOSOPHY --- */
 .philosophy-container {
     max-width: 800px;
 }
@@ -93,7 +259,7 @@ body {
     color: #8c8c8c;
 }
 
-/* --- Milestones Section --- */
+/* --- PAGE 09 (EXT): MILESTONES --- */
 .milestones-flowline {
     display: flex;
     flex-direction: column;
@@ -120,7 +286,7 @@ body {
     max-width: 700px;
 }
 
-/* --- PAGE 10: MEDIA SHOWCASE STYLES --- */
+/* --- PAGE 10: MEDIA SHOWCASE --- */
 .media-subtext {
     color: #8c8c8c;
     margin-top: -1.5rem;
@@ -147,6 +313,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    border-radius: 4px;
 }
 
 .media-tag {
@@ -169,7 +336,7 @@ body {
 .iframe-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     height: 0;
 }
 
@@ -182,7 +349,7 @@ body {
     border: 0;
 }
 
-/* --- Page 11: Contact Layout --- */
+/* --- PAGE 11: CONTACT --- */
 .contact-subtext {
     font-size: 1.1rem;
     color: #8c8c8c;
